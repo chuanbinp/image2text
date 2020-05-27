@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:500,700">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="app.js" defer></script>
+    <title>Scanner+OCR</title>
+</head>
+<body>
+    <header class="header">
+      <div class="brand-box">
+        <span class="brand">Document Scanner + OCR</span>
+      </div>
+
+      <div class="text-box">
+        <h1 class="heading-primary">
+          <span class="heading-primary-main">Image to text</span>
+          <span class="heading-primary-sub">Simply upload a book/document page to get a scanned copy and pure text back</span>
+        </h1>
+        <a href="#" class="btn btn-white btn-animated">Try it out now!</a>
+      </div>
+    </header>
+
+
+    <div class="flex-container">
+        <div id="upload_div">
+            <h1>UPLOAD FILE</h1>
+            <div>
+              <form id="upload-form" onsubmit="return false;" method="POST" enctype="multipart/form-data">
+                  <strong>Select File to Process:</strong>
+                  <label for="file-picker" id="file_btn" class="button">Choose Image File</label>
+                  <input id="file-picker" type="file" name="file" accept="image/* "><br>
+                  <i id="file_name"></i>
+                  <i id="file_support"></i>
+                  <br />
+                  <input class="button" type="submit" value="Scan" id="scan_btn">
+                  <input class="button" type="submit" value="Scan + OCR" id="ocr_btn">
+              </form>
+            </div>
+            <img id="uploaded_image" src=""><br>
+            <a class="button" href="./assets/img/eg1.jpg" download target="_blank">Download Example Image 1</a>
+            <a class="button" href="./assets/img/eg2.jpg" download target="_blank">Download Example Image 2</a>
+            <a class="button" href="./assets/img/eg3.jpg" download target="_blank">Download Example Image 3</a>
+
+        </div>
+        <div id="scan_div">
+            <h1>Scanned File</h1>
+            <img id="scan_image" src="">
+            <img id="scan_load" class="load_img" src="./assets/loading.gif">
+            <br />
+            <a id="download_btn" class="button" href="" download="scanned_image.jpg">Download Full Res Scanned Image</a>
+        </div>
+        <div id="ocr_div">
+            <h1>OCR Output</h1>
+            <img id="ocr_load" class="load_img" src="./assets/loading.gif">
+            <div>
+              <textarea id="ocr_text">loading..</textarea>
+              <br />
+              <button class="button" id="copy_btn">Copy</button>
+              <br />
+              <span id="copy_status"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
