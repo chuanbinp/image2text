@@ -158,7 +158,7 @@ $("#file-picker").change(function(){
       $("#file_name").text(input.files[0].name);
       var ext= input.files[0].name.substring(input.files[0].name.lastIndexOf('.')+1).toLowerCase()
 
-      if ((ext == 'jpg') || (ext == 'png')){
+      if ((ext == 'jpg') || (ext == 'png') || (ext == 'jpeg')){
           file_supported(input.files[0]);
       }
       else{
